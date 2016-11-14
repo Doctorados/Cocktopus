@@ -63,7 +63,7 @@ class switch:
         print(port, "set to low")
 
     def pump(self, menge):
-        zeit = menge * constants.multiplier()
+        zeit = menge * constants.multiplier(self)
         switch.pumpswitch(self, zeit)
 
     def ledswitch(self, color):
