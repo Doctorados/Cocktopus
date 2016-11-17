@@ -8,8 +8,8 @@ while True:
     input = getch()
     print("Input:", input)
     keynum = keybindings.key(input)
-    if keynum == "/":
-        for x in range(1, 10):
+    if input == "/":
+        for x in range(0, 9):
         switch.ledswitch(x, "r")
         try:
             menge = int(input())
@@ -18,7 +18,13 @@ while True:
         except ValueError:
             print("input is not an integer")
             switch.errorlight()
-
+    
+    if input == "@":
+        input == "x"
+        while input != "@":
+            input = getch()
+            switch.pumpswitch(input, 1)
+            
     else:
         if keynum != False:
             name = keybindings.cocktail(keynum)

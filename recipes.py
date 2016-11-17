@@ -6,9 +6,9 @@ class recipes:
 
     def execute(self):
         if self == "screwdriver":
-            switch.pump(3, 5)
+            switch.pump(2, 5)
             time.sleep(constants.pause())
-            switch.pump(9, 10)
+            switch.pump(8, 10)
             time.sleep(constants.pause())
             return "finished"
 
