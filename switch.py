@@ -63,25 +63,25 @@ class switch:
         print(port, "set to low")
 
     def pump(self, menge):
-        zeit = (menge * constants.multiplier()) + constants.distance(self)
+        zeit = menge * constants.multiplier() + constants.distance(self)
         switch.pumpswitch(self, zeit)
 
     def ledswitch(self, color):
         port = led_index.pop(self)
         led_index.insert(self, port)
-        if color = "r":
+        if color == "r":
             GPIO.output(port, GPIO.LOW)
             print(port, "set to low")
-        if color = "b":
+        if color == "b":
             GPIO.output(port, GPIO.HIGH)
             print(port, "set to high")
 
-    def errorlight(self):
-        for x in range(1, 10):
-            ledswitch(x, "r")
+    def errorlight():
+        for x in range(0, 9):
+            switch.ledswitch(x, "r")
             time.sleep(0.1)
-            ledswitch(x, "b")
-
+            switch.ledswitch(x, "b")
+        
 
 
 

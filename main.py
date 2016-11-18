@@ -5,32 +5,36 @@ from recipes import recipes
 from switch import switch
 
 while True:
-    input = getch()
-    print("Input:", input)
-    keynum = keybindings.key(input)
-    if input == "/":
+    button = getch()
+    print("Input:", button)
+    keynum = keybindings.key(button)
+    print(keynum)
+    if button == "/":
         for x in range(0, 9):
-        switch.ledswitch(x, "r")
-        try:
-            menge = int(input())
-            switch.pump(x, menge)
-            switch.ledswitch(x, "b")
-        except ValueError:
-            print("input is not an integer")
-            switch.errorlight()
+            switch.ledswitch(x, "r")
+            try:
+                menge = int(input("Menge eingeben"))
+                switch.pump(x, menge)
+                switch.ledswitch(x, "b")
+            except ValueError:
+                print("input is not an integer")
+                switch.errorlight()
     
-    if input == "@":
-        input == "x"
-        while input != "@":
-            input = getch()
-            switch.pumpswitch(input, 1)
+#    if button == "@":
+#        button = "x"
+#        while button != "@":
+#            try:
+#                button = getch()
+#                switch.pumpswitch(int(button), 1)
+#            except:
+#                switch.errorlight()
             
     else:
-        if keynum != False:
+        if keynum == -1:
+            print("key not recognized")
+            switch.errorlight()
+        else:
             name = keybindings.cocktail(keynum)
             while recipes.execute(name) != "finished":
                 time.sleep(3)
             print("Request finished without errors")
-        else:
-            print("key not recognized")
-            switch.errorlight()

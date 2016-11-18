@@ -10,7 +10,7 @@ class keybindings:
             print("Keyindex is:", keyindex)
             return keyindex
         else:
-            False
+            return -1
             
     def cocktail(self):
         cocktailname = cocktails.pop(self)
