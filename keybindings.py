@@ -1,6 +1,4 @@
 keys = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "y", "x", "c", "v", "b", "n", "m", ",", "."]
-cocktails = ["screwdriver", "orangefizz", "pinapplefizz", "bitterrussian", "pinacolada", "ipanema", "maitai", "tomcollins", "wodkafizz", "springparadise", "coolrussian", "daiquiri", "russischerspringer",  ]
-
 
 class keybindings:
    
@@ -12,11 +10,7 @@ class keybindings:
         else:
             return -1
             
-    def cocktail(self):
-        cocktailname = cocktails.pop(self)
-        cocktails.insert(self, cocktailname)
-        print("Cocktail is:", cocktailname)
-        return cocktailname
+
        
 
 

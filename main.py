@@ -7,8 +7,8 @@ from switch import switch
 while True:
     button = getch()
     print("Input:", button)
-    keynum = keybindings.key(button)
-    print(keynum)
+    keyindex = keybindings.key(button)
+    print(keyindex)
     if button == "/":
         for x in range(0, 9):
             switch.ledswitch(x, "r")
@@ -28,13 +28,10 @@ while True:
                 switch.pumpswitch(int(button), 0.5)
             except:
                 switch.errorlight()
-            
+
+    if keynum == -1:
+        print("key not recognized")
+        switch.errorlight()
     else:
-        if keynum == -1:
-            print("key not recognized")
-            switch.errorlight()
-        else:
-            name = keybindings.cocktail(keynum)
-            while recipes.execute(name) != "finished":
-                time.sleep(3)
-            print("Request finished without errors")
+        recipes.execute(recipes.cocktail(keyindex))
+        print("Request finished without errors")

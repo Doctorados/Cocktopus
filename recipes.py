@@ -5,13 +5,18 @@ from constants import constants
 class recipes:
 
     def execute(self):
-        if self == "screwdriver":
-            switch.pump(2, 5)
+        for x in range(10):
+            switch.pump(x, self.pop(x))
             time.sleep(constants.pause())
-            switch.pump(8, 10)
-            time.sleep(constants.pause())
-            return "finished"
-        if self == "
+        return "finished"
 
+    def cocktail(self):
+        recipe = cocktails.pop(self)
+        cocktails.insert(self, recipe)
+        print("Cocktail is:", recipe)
+        return recipe
 
+screwdriver = [0, 0, 4, 0, 0, 0, 0, 0, 10, 0]
+
+cocktails = [screwdriver, orangefizz, pinapplefizz, bitterrussian, pinacolada, ipanema, maitai, tomcollins, wodkafizz, springparadise, coolrussian, daiquiri, russischerspringer]
 
