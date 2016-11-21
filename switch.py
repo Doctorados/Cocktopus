@@ -77,7 +77,7 @@ class switch:
             print(port, "set to high")
 
     def errorlight():
-        for x in range(0, 9):
+        for x in range(10):
             switch.ledswitch(x, "r")
             time.sleep(0.1)
             switch.ledswitch(x, "b")
