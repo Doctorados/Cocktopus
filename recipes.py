@@ -11,6 +11,7 @@ class recipes:
             switch.pump(8, 10)
             time.sleep(constants.pause())
             return "finished"
+        if self == "
 
 
 

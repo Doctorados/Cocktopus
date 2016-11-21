@@ -1,5 +1,5 @@
-keys = ["q", ]
-cocktails = ["screwdriver"]
+keys = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "y", "x", "c", "v", "b", "n", "m", ",", "."]
+cocktails = ["screwdriver", "orangefizz", "pinapplefizz", "bitterrussian", "pinacolada", "ipanema", "maitai", "tomcollins", "wodkafizz", "springparadise", "coolrussian", "daiquiri", "russischerspringer",  ]
 
 
 class keybindings:

@@ -20,14 +20,14 @@ while True:
                 print("input is not an integer")
                 switch.errorlight()
     
-#    if button == "@":
-#        button = "x"
-#        while button != "@":
-#            try:
-#                button = getch()
-#                switch.pumpswitch(int(button), 1)
-#            except:
-#                switch.errorlight()
+    if button == "@":
+        button = "x"
+        while button != "@":
+            try:
+                button = getch()
+                switch.pumpswitch(int(button), 0.5)
+            except:
+                switch.errorlight()
             
     else:
         if keynum == -1:
