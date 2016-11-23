@@ -29,7 +29,7 @@ while True:
             except:
                 switch.errorlight()
 
-    if keynum == -1:
+    if keyindex == -1:
         print("key not recognized")
         switch.errorlight()
     else:
