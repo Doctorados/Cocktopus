@@ -10,7 +10,7 @@ while True:
     keyindex = keybindings.key(button)
     print(keyindex)
     if button == "/":
-        for x in range(0, 9):
+        for x in range(10):
             switch.ledswitch(x, "r")
             try:
                 menge = int(input("Menge eingeben"))
