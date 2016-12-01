@@ -38,7 +38,7 @@ GPIO.setup(19, GPIO.OUT)
 #Led Slot 5
 GPIO.setup(26, GPIO.OUT)
 #Led Slot 6
-GPIO.setup(14, GPIO.OUT)
+GPIO.setup(20, GPIO.OUT)
 #Led Slot 7
 GPIO.setup(15, GPIO.OUT)
 #Led Slot 8
@@ -49,7 +49,7 @@ GPIO.setup(23, GPIO.OUT)
 GPIO.setup(24, GPIO.OUT)
 
 pump_index = [2, 3, 4, 17, 27, 22, 10, 9, 11, 0]
-led_index = [5, 6, 13, 19, 26, 14, 15, 18, 23, 24]
+led_index = [5, 6, 13, 19, 26, 20, 15, 18, 23, 24]
 
 class switch:
 
