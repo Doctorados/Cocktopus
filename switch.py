@@ -25,7 +25,7 @@ GPIO.setup(9, GPIO.OUT)
 #Pumpe 9
 GPIO.setup(11, GPIO.OUT)
 #Pumpe 10
-GPIO.setup(21, GPIO.OUT)
+GPIO.setup(0, GPIO.OUT)
 
 #LED_Slot 1
 GPIO.setup(5, GPIO.OUT)
@@ -48,7 +48,7 @@ GPIO.setup(23, GPIO.OUT)
 #Led Slot 10
 GPIO.setup(24, GPIO.OUT)
 
-pump_index = [2, 3, 4, 17, 27, 22, 10, 9, 11, 21]
+pump_index = [2, 3, 4, 17, 27, 22, 10, 9, 11, 0]
 led_index = [5, 6, 13, 19, 26, 14, 15, 18, 23, 24]
 
 class switch:
@@ -66,6 +66,19 @@ class switch:
         if menge != 0:
             zeit = menge * constants.multiplier() + constants.distance(self)
             switch.pumpswitch(self, zeit)
+
+    def manpump(self, bit):
+        port = pump_index.pop(self)
+        pump_index.insert(self, port)
+        if bit == 1:
+            GPIO.output(port, GPIO.HIGH)
+            print(port, "set to high")
+        else:
+            GPIO.output(port, GPIO.LOW)
+            print(port, "set to high")
+        
+        GPIO.output(port, GPIO.LOW)
+        print(port, "set to low")
 
     def ledswitch(self, color):
         port = led_index.pop(self)

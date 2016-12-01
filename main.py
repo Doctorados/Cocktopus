@@ -10,7 +10,7 @@ while True:
     keyindex = keybindings.key(button)
     print(keyindex)
     if button == "/":
-        for x in range(10):
+        for x in range(0, 9):
             switch.ledswitch(x, "r")
             try:
                 menge = int(input("Menge eingeben"))
@@ -25,7 +25,7 @@ while True:
         while button != "@":
             try:
                 button = getch()
-                switch.pumpswitch(int(button), 0.5)
+                switch.manpump(int(button), 1)
             except:
                 switch.errorlight()
 
