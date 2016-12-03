@@ -4,24 +4,24 @@ import RPi.GPIO as GPIO
 from constants import constants
 
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 #Pumpe 1
-GPIO.setup(2, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 #Pumpe 2
-GPIO.setup(3, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
 #Pumpe 3
-GPIO.setup(4, GPIO.OUT)
+GPIO.setup(11, GPIO.OUT)
 #Pumnpe 4
-GPIO.setup(17, GPIO.OUT)
-#Pumpe 5
-GPIO.setup(27, GPIO.OUT)
-#Pumpe 6
-GPIO.setup(22, GPIO.OUT)
-#Pumpe 7
 GPIO.setup(10, GPIO.OUT)
+#Pumpe 5
+GPIO.setup(8, GPIO.OUT)
+#Pumpe 6
+GPIO.setup(7, GPIO.OUT)
+#Pumpe 7
+GPIO.setup(5, GPIO.OUT)
 #Pumpe 8
-GPIO.setup(9, GPIO.OUT)
+GPIO.setup(3, GPIO.OUT)
 #Pumpe 9
 GPIO.setup(11, GPIO.OUT)
 #Pumpe 10
@@ -48,8 +48,8 @@ GPIO.setup(23, GPIO.OUT)
 #Led Slot 10
 GPIO.setup(24, GPIO.OUT)
 
-pump_index = [2, 3, 4, 17, 27, 22, 10, 9, 11, 0]
-led_index = [5, 6, 13, 19, 26, 20, 15, 18, 23, 24]
+pump_index = [13, 12, 11, 10, 8, 7, 5, 3, 15, 16]
+led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32]
 
 class switch:
 
