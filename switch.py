@@ -60,7 +60,7 @@ class switch:
         print(address, "set to high")
         time.sleep(ptime)
         GPIO.output(port, GPIO.LOW)
-        print(port, "set to low")
+        print(address, "set to low")
 
     def pump(self, cl):
         if cl != 0:
