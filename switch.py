@@ -53,12 +53,12 @@ led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32]
 
 class switch:
 
-    def pumpswitch(self, zeit):
+    def pumpswitch(self, ptime):
         port = pump_index.pop(self)
         pump_index.insert(self, port)
         GPIO.output(port, GPIO.HIGH)
         print(port, "set to high")
-        time.sleep(zeit)
+        time.sleep(ptime)
         GPIO.output(port, GPIO.LOW)
         print(port, "set to low")
 
