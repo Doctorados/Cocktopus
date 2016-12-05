@@ -57,7 +57,7 @@ class switch:
         address = pump_index.pop(self)
         pump_index.insert(self, address)
         GPIO.output(address, GPIO.HIGH)
-        print(port, "set to high")
+        print(address, "set to high")
         time.sleep(ptime)
         GPIO.output(port, GPIO.LOW)
         print(port, "set to low")
@@ -68,24 +68,24 @@ class switch:
             switch.pumpswitch(self, ptime)
 
     def manpump(self, bit):
-        port = pump_index.pop(self)
-        pump_index.insert(self, port)
+        address = pump_index.pop(self)
+        pump_index.insert(self, address)
         if bit == 1:
-            GPIO.output(port, GPIO.HIGH)
-            print(port, "set to high")
+            GPIO.output(address, GPIO.HIGH)
+            print(address, "set to high")
         else:
-            GPIO.output(port, GPIO.LOW)
-            print(port, "set to high")
+            GPIO.output(address, GPIO.LOW)
+            print(address, "set to high")
         
-        GPIO.output(port, GPIO.LOW)
-        print(port, "set to low")
+        GPIO.output(address, GPIO.LOW)
+        print(address, "set to low")
 
     def ledswitch(self, color):
-        port = led_index.pop(self)
-        led_index.insert(self, port)
+        address = led_index.pop(self)
+        led_index.insert(self, address)
         if color == "r":
-            GPIO.output(port, GPIO.LOW)
-            print(port, "set to low")
+            GPIO.output(address, GPIO.LOW)
+            print(address, "set to low")
         if color == "b":
             GPIO.output(port, GPIO.HIGH)
             print(port, "set to high")
