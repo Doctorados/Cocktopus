@@ -23,30 +23,30 @@ GPIO.setup(5, GPIO.OUT)
 #Pumpe 8
 GPIO.setup(3, GPIO.OUT)
 #Pumpe 9
-GPIO.setup(11, GPIO.OUT)
+GPIO.setup(15, GPIO.OUT)
 #Pumpe 10
-GPIO.setup(0, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
 
 #LED_Slot 1
-GPIO.setup(5, GPIO.OUT)
-#Led Slot 2
-GPIO.setup(6, GPIO.OUT)
-#Led Slot 3
-GPIO.setup(13, GPIO.OUT)
-#Led Slot 4
-GPIO.setup(19, GPIO.OUT)
-#Led Slot 5
-GPIO.setup(26, GPIO.OUT)
-#Led Slot 6
-GPIO.setup(20, GPIO.OUT)
-#Led Slot 7
-GPIO.setup(15, GPIO.OUT)
-#Led Slot 8
 GPIO.setup(18, GPIO.OUT)
-#Led Slot 9
+#Led Slot 2
+GPIO.setup(19, GPIO.OUT)
+#Led Slot 3
+GPIO.setup(21, GPIO.OUT)
+#Led Slot 4
+GPIO.setup(22, GPIO.OUT)
+#Led Slot 5
 GPIO.setup(23, GPIO.OUT)
-#Led Slot 10
+#Led Slot 6
 GPIO.setup(24, GPIO.OUT)
+#Led Slot 7
+GPIO.setup(26, GPIO.OUT)
+#Led Slot 8
+GPIO.setup(29, GPIO.OUT)
+#Led Slot 9
+GPIO.setup(31, GPIO.OUT)
+#Led Slot 10
+GPIO.setup(32, GPIO.OUT)
 
 pump_index = [13, 12, 11, 10, 8, 7, 5, 3, 15, 16]
 led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32]
