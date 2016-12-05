@@ -62,10 +62,10 @@ class switch:
         GPIO.output(port, GPIO.LOW)
         print(port, "set to low")
 
-    def pump(self, menge):
-        if menge != 0:
-            zeit = menge * constants.multiplier() + constants.distance(self)
-            switch.pumpswitch(self, zeit)
+    def pump(self, cl):
+        if cl != 0:
+            ptime = menge * constants.multiplier() + constants.distance(self)
+            switch.pumpswitch(self, ptime)
 
     def manpump(self, bit):
         port = pump_index.pop(self)
