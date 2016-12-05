@@ -13,8 +13,8 @@ while True:
         for x in range(0, 9):
             switch.ledswitch(x, "r")
             try:
-                menge = int(input("Menge eingeben"))
-                switch.pump(x, menge)
+                cl = int(input("Menge eingeben"))
+                switch.pump(x, cl)
                 switch.ledswitch(x, "b")
             except ValueError:
                 print("input is not an integer")
