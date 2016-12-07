@@ -67,19 +67,6 @@ class switch:
             ptime = menge * constants.multiplier() + constants.distance(self)
             switch.pumpswitch(self, ptime)
 
-    def manpump(self, bit):
-        address = pump_index.pop(self)
-        pump_index.insert(self, address)
-        if bit == 1:
-            GPIO.output(address, GPIO.HIGH)
-            print(address, "set to high")
-        else:
-            GPIO.output(address, GPIO.LOW)
-            print(address, "set to high")
-        
-        GPIO.output(address, GPIO.LOW)
-        print(address, "set to low")
-
     def ledswitch(self, color):
         address = led_index.pop(self)
         led_index.insert(self, address)
