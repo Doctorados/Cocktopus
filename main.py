@@ -19,15 +19,6 @@ while True:
             except ValueError:
                 print("input is not an integer")
                 switch.errorlight()
-    
-    if button == "@":
-        button = "x"
-        while button != "@":
-            try:
-                button = getch()
-                switch.manpump(int(button), 1)
-            except:
-                switch.errorlight()
 
     if keyindex == -1:
         print("key not recognized")
