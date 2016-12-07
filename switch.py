@@ -3,9 +3,10 @@ import time
 import RPi.GPIO as GPIO
 from constants import constants
 
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False) #Schaltet Text-Ouutput von GPIO.py aus
+GPIO.setmode(GPIO.BOARD) #Steuerung verwendet nun BOARD-Nummern
 
+#Pins werden für ihre Funktion konfiguriert
 #Pumpe 1
 GPIO.setup(13, GPIO.OUT)
 #Pumpe 2
@@ -48,39 +49,35 @@ GPIO.setup(31, GPIO.OUT)
 #Led Slot 10
 GPIO.setup(32, GPIO.OUT)
 
-pump_index = [13, 12, 11, 10, 8, 7, 5, 3, 15, 16]
-led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32]
+pump_index = [13, 12, 11, 10, 8, 7, 5, 3, 15, 16] #Die BOARD-Adressen der Pumpen 0-9
+led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32] #Die BOARD-Adressen der LED-Paare 0-9
 
 class switch:
 
-    def pumpswitch(self, ptime):
-        address = pump_index.pop(self)
+    def pumpswitch(self, ptime): #self= Pumpennummer ptime= zu pumpende Zeit
+        address = pump_index.pop(self) #Adresse der Pumpe aus pump_index
         pump_index.insert(self, address)
-        GPIO.output(address, GPIO.HIGH)
-        print(address, "set to high")
-        time.sleep(ptime)
-        GPIO.output(port, GPIO.LOW)
-        print(address, "set to low")
+        GPIO.output(address, GPIO.HIGH) #Pumpe einschalten
+        time.sleep(ptime) #Zeit abwarten
+        GPIO.output(port, GPIO.LOW) #Pumpe ausschalten
 
-    def pump(self, cl):
+    def pump(self, cl): #self = Pumpennummer cl=Menge in cl
         if cl != 0:
-            ptime = menge * constants.multiplier() + constants.distance(self)
+            ptime = cl * constants.multiplier() + constants.distance(self) #Menge * Multiplikator um cl in Sekunden umzurechnen + Zeit bis Föüssigkeit das Ende des Schlauchs erreicht
             switch.pumpswitch(self, ptime)
 
-    def ledswitch(self, color):
-        address = led_index.pop(self)
+    def ledswitch(self, color): #self = Nummer des LED-Paares color = r[ot] oder b[lau]
+        address = led_index.pop(self) #Adresse des LED-Paares aus led_index
         led_index.insert(self, address)
-        if color == "r":
-            GPIO.output(address, GPIO.LOW)
-            print(address, "set to low")
         if color == "b":
-            GPIO.output(port, GPIO.HIGH)
-            print(port, "set to high")
+            GPIO.output(address, GPIO.LOW) #Pin auf LOW Relais schaltet auf blau (Normalzustand)
+        if color == "r":
+            GPIO.output(port, GPIO.HIGH) #Pin auf HIGH Relais schaltet auf rot
 
-    def errorlight():
+    def errorlight(): #vorprogrammiertes rotes Lauflicht
         for x in range(10):
             switch.ledswitch(x, "r")
-            time.sleep(0.1)
+            time.sleep(0.3)
             switch.ledswitch(x, "b")
         
 
