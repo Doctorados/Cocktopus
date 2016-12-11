@@ -43,7 +43,7 @@ stechmuecke		= [0, 0, 0, 10, 1, 0, 3, 1, 0, 0]
 virgincolada            = [0, 0, 0, 0, 0, 0, 0, 5, 7, 3]
 
 
-cocktails = [screwdriver, orangefizz, pinapplefizz, bitterrussian, pinacolada, maitai, tomcollins, wodkafizz, springparadise, coolrussian, daiquiri, russischerspringer, sweetspring, stechmuecke, gintonic]
+cocktails = [screwdriver, orangefizz, pinapplefizz, bitterrussian, pinacolada, maitai, tomcollins, wodkafizz, springparadise, coolrussian, daiquiri, russischerspringer, sweetspring, stechmuecke, gintonic, virgincolada]
 #Enthält alle eingespeicherten Rezepte in ihrer Reihenfolge auf der Tastatur
 
 
