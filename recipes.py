@@ -15,9 +15,6 @@ class recipes:
         cocktails.insert(self, recipe)
         return recipe
 
-cocktails = [screwdriver, orangefizz, pinapplefizz, bitterrussian, pinacolada, maitai, tomcollins, wodkafizz, springparadise, coolrussian, daiquiri, russischerspringer, sweetspring, stechmuecke, gintonic]
-#Enthält alle eingespeicherten Rezepte in ihrer Reihenfolge auf der Tastatur
-
 ##################################################	Internet-Cocktails	################################################## Formatierung dieses Abschnitts abhängig vom Editor
 screwdriver 		= [0, 0, 4, 0, 0, 0, 0, 0, 11, 0] #Angabe der Menge in cl für Pumpen 0-9
 schlumpf 		= [0, 0, 4, 0, 0, 2, 0, 0, 0, 4]
@@ -46,7 +43,8 @@ stechmuecke		= [0, 0, 0, 10, 1, 0, 3, 1, 0, 0]
 virgincolada            = [0, 0, 0, 0, 0, 0, 0, 5, 7, 3]
 
 
-
+cocktails = [screwdriver, orangefizz, pinapplefizz, bitterrussian, pinacolada, maitai, tomcollins, wodkafizz, springparadise, coolrussian, daiquiri, russischerspringer, sweetspring, stechmuecke, gintonic]
+#Enthält alle eingespeicherten Rezepte in ihrer Reihenfolge auf der Tastatur
 
 
 
