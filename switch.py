@@ -59,7 +59,7 @@ class switch:
         pump_index.insert(self, address)
         GPIO.output(address, GPIO.HIGH) #Pumpe einschalten
         time.sleep(ptime) #Zeit abwarten
-        GPIO.output(port, GPIO.LOW) #Pumpe ausschalten
+        GPIO.output(address, GPIO.LOW) #Pumpe ausschalten
 
     def pump(self, cl): #self = Pumpennummer cl=Menge in cl
         if cl != 0:
@@ -72,12 +72,12 @@ class switch:
         if color == "b":
             GPIO.output(address, GPIO.LOW) #Pin auf LOW Relais schaltet auf blau (Normalzustand)
         if color == "r":
-            GPIO.output(port, GPIO.HIGH) #Pin auf HIGH Relais schaltet auf rot
+            GPIO.output(address, GPIO.HIGH) #Pin auf HIGH Relais schaltet auf rot
 
     def errorlight(): #vorprogrammiertes rotes Lauflicht
         for x in range(10):
             switch.ledswitch(x, "r")
-            time.sleep(0.3)
+            time.sleep(0.1)
             switch.ledswitch(x, "b")
         
 

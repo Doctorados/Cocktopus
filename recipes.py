@@ -25,7 +25,7 @@ russischerspringer	= [0, 0, 6, 0, 1, 3, 5, 0, 0, 0]
 bitterrussian 		= [1, 0, 4, 10, 0, 0, 0, 0, 0, 0]
 daiquiri		= [5, 0, 0, 0, 1, 0, 0.5, 0, 0, 0]
 maitai			= [5, 0, 0, 0, 0, 2, 2, 3, 3, 0]
-pinapplefizz		= [5, 0, 0, 0, 1, 0, 3, 6, 0, 0]
+pineapplefizz		= [5, 0, 0, 0, 1, 0, 3, 6, 0, 0]
 pinacolada		= [5, 0, 0, 0, 0, 0, 0, 5, 0, 0] #5cl Cocos
 tomcollins		= [0, 5, 0, 0, 2, 0, 3, 0, 0, 0] #5cl Soda
 gintonic                = [0, 4, 0, 11, 0, 0, 0, 0, 0, 0,]             
@@ -43,9 +43,7 @@ stechmuecke		= [0, 0, 0, 10, 1, 0, 3, 1, 0, 0]
 virgincolada            = [0, 0, 0, 0, 0, 0, 0, 5, 7, 3]
 
 
-cocktails = [screwdriver, schlumpf, orangefizz, coolrussian, wodkafizz, russischerspringer, bitterrussian, 
-             daiquiri, maitai, pineapplefizz, pinacolada, tomcollins, gintonic, leberzirrhose, spassimglas, hotlinemiami,
-             swimmingpool, manapotion, thecockslapper, springparadise, sweetspring, stechmuecke, virgincolada]
+cocktails = [screwdriver, schlumpf, orangefizz, coolrussian, wodkafizz, russischerspringer, bitterrussian, daiquiri, maitai, pineapplefizz, pinacolada, tomcollins, gintonic, leberzirrhose, spassimglas, hotlinemiami, swimmingpool, manapotion, thecockslapper, springparadise, sweetspring, stechmuecke, virgincolada]
 #Enthält alle eingespeicherten Rezepte in ihrer Reihenfolge auf der Tastatur
 
 
