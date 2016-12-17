@@ -17,7 +17,10 @@ while True:
                 switch.errorlight() #rotes Lauflicht bei fehlerhafter Eingabe
 
     if keyindex == -1: #-1 = Fehler. True/False nicht möglich da in Python False=0 was gültiger Index ist
-        switch.errorlight()#rotes Lauflicht bei fehlerhafter Eingabe
+        if button == "x": #Daniel-Button
+            switch.sneakypump(2, 1)
+        else:
+            switch.errorlight()#rotes Lauflicht bei fehlerhafter Eingabe
     else:
         recindex = recipes.cocktail(keyindex) #Index des Cocktailrezeptes in der Liste cocktails (recipes.py)
         recipes.execute(recindex) #Aufrufen der Funktion zur Ausführung des Rezepts.
