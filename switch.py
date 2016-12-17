@@ -81,7 +81,18 @@ class switch:
             switch.ledswitch(x, "r")
             time.sleep(0.1)
             switch.ledswitch(x, "b")
-        
+            
+    def sneakypump(self, cl): #self = Pumpennummer cl=Menge in cl
+        if cl != 0:
+            ptime = cl * constants.multiplier() + constants.distance(self) #Menge * Multiplikator um cl in Sekunden umzurechnen + Zeit bis Föüssigkeit das Ende des Schlauchs erreicht
+            switch.sneakypumpswitch(self, ptime)
 
+    
+    def sneakypumpswitch(self, ptime): #self= Pumpennummer ptime= zu pumpende Zeit
+        address = pump_index.pop(self) #Adresse der Pumpe aus pump_index
+        pump_index.insert(self, address)
+        GPIO.output(address, GPIO.HIGH) #Pumpe einschalten
+        time.sleep(ptime) #Zeit abwarten
+        GPIO.output(address, GPIO.LOW) #Pumpe ausschalten
 
 
