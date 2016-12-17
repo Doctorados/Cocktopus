@@ -3,7 +3,7 @@ import time
 import RPi.GPIO as GPIO
 from constants import constants
 
-GPIO.setwarnings(False) #Schaltet Text-Ouutput von GPIO.py aus
+GPIO.setwarnings(False) #Schaltet Text-Output von GPIO.py aus
 GPIO.setmode(GPIO.BOARD) #Steuerung verwendet nun BOARD-Nummern
 
 #Pins werden für ihre Funktion konfiguriert
@@ -49,7 +49,7 @@ GPIO.setup(31, GPIO.OUT)
 #Led Slot 10
 GPIO.setup(32, GPIO.OUT)
 
-pump_index = [13, 12, 11, 10, 8, 7, 5, 3, 15, 16] #Die BOARD-Adressen der Pumpen 0-9
+pump_index = [13, 12, 11, 10, 3, 7, 5, 8, 15, 16] #Die BOARD-Adressen der Pumpen 0-9 Slot 5 und 8 getauscht weil kaputt
 led_index = [18, 19, 21, 22, 23, 24, 26, 29, 31, 32] #Die BOARD-Adressen der LED-Paare 0-9
 
 class switch:
@@ -57,9 +57,11 @@ class switch:
     def pumpswitch(self, ptime): #self= Pumpennummer ptime= zu pumpende Zeit
         address = pump_index.pop(self) #Adresse der Pumpe aus pump_index
         pump_index.insert(self, address)
+        switch.ledswitch(self, "r")
         GPIO.output(address, GPIO.HIGH) #Pumpe einschalten
         time.sleep(ptime) #Zeit abwarten
         GPIO.output(address, GPIO.LOW) #Pumpe ausschalten
+        switch.ledswitch(self, "b")
 
     def pump(self, cl): #self = Pumpennummer cl=Menge in cl
         if cl != 0:
